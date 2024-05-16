@@ -1,1 +1,1 @@
-# diffit
+# Diffit (Diffusion Vision Transformer)
