@@ -16,7 +16,7 @@ Diffusion models, have emerged as a powerful class of probabilistic models for g
 
 
 ## Vision Tansformers (ViTs)
-Vision Transformers (ViTs) the transformative power of the Transformer architecture originally designed for natural language processing. Unlike traditional convolutional neural networks (CNNs), which have dominated the vision landscape for decades (and are still quite used for a variety of tasks, especially involving low resources architectures), Vision Transformers utilize self-attention mechanisms to model the global relationships between different parts of <ins>the same<ins> image.
+Vision Transformers (ViTs) the transformative power of the Transformer architecture originally designed for natural language processing. Unlike traditional convolutional neural networks (CNNs), which have dominated the vision landscape for decades (and are still quite used for a variety of tasks, especially involving low resources and constrained architectures), Vision Transformers utilize self-attention mechanisms to model the global relationships between different parts of <ins>the same<ins> image.
 
 
 
@@ -34,9 +34,37 @@ v_s = x_s W_{vs} + x_t W_{vt}\\
 \end{align}
 $$
 
-where $W_{qs}, W_{qt}, W_{ks}, W_{kt}, W_{vs}$ and $W_{vt}$ denote spatial (i.e. the ones with subscript $\_{*s}$) and temporal (i.e. the ones with subscript $\_{*t}$) projection weights for their corresponding queries, keys, and values respectively.\
+where $W_{qs}, W_{qt}, W_{ks}, W_{kt}, W_{vs}$ and $W_{vt}$ denote spatial (i.e. the ones with subscript $\_{*s}$) and temporal (i.e. the ones with subscript $\_{*t}$) projection weights for their corresponding queries, keys, and values respectively.
 
 The initial equations listed above are equivalent to linear projection of each spatial token concatenated with linear projection of each time token. As a result, **Query, Key and Values** are are all **linear functions** of both time and spatial tokens.
 
-This is a really good thing, since in this way, Query, Key and Values can modify their behavious adaptively according to the timestep!\
-In other words, *attention module can learn to act differently based on the timestep in which diffusion process is* 🙂.
+This is a really good thing, since in this way, Query, Key and Values can modify their behavious adaptively according to the timestep! In other words, *attention module can learn to act differently based on the timestep in which diffusion process is* 🙂.
+
+
+## The plus one
+In addition to replicating the architecture—a task that has proven to be quite challenging—I have shifted the project towards an optimization perspective. I have analyzed various optimization metrics that can be computed for architectures and have undertaken the following initiatives:
+- Firstly, I developed a variant of the DiffiT architecture based on grayscale images. As expected, the performance difference from the RGB version was minimal.
+- Secondly, I created a new variant, named DiffiP, which incorporates the PoolFormer in place of the traditional Transformer. I've tried to leverage the metaFormer paradigm to optimize our network without a big loss in the accurary point of view.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
