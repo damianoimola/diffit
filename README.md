@@ -44,7 +44,7 @@ This is a really good thing, since in this way, Query, Key and Values can modify
 ## The plus one
 In addition to replicating the architecture—a task that has proven to be quite challenging—I have shifted the project towards an optimization perspective. I have analyzed various optimization metrics that can be computed for architectures and have undertaken the following initiatives:
 - Firstly, I developed a variant of the DiffiT architecture based on grayscale images. As expected, the performance difference from the RGB version was minimal.
-- Secondly, I created a new variant, named DiffiP, which incorporates the PoolFormer in place of the traditional Transformer. I've tried to leverage the metaFormer paradigm to optimize our network without a big loss in the accurary point of view.
+- Secondly, I created a new variant, named DiffiP, which incorporates the PoolFormer in place of the traditional Transformer and Depthwise Separable Convolutions instead of "classical" ones. I've tried to leverage the metaFormer paradigm to optimize our network without a big loss in the accurary point of view.
 
 
 
